@@ -64,16 +64,16 @@
       background:
         linear-gradient(
           to bottom,
-          rgba(90, 60, 35, 0.30),
-          rgba(120, 85, 55, 0.38)
+          rgba(90, 60, 35, 0.25),
+          rgba(120, 85, 55, 0.40)
         );
     }
 
     header .container {
       position: relative;
       z-index: 2;
-      padding: 80px 20px;
-		align-self: flex-end;
+      padding: 0 20px 40px;
+      align-self: flex-end;
     }
 
     header h1 {
@@ -84,10 +84,10 @@
     }
 
     header p {
-      margin: 22px auto 0;
+      margin: 18px auto 0;
       max-width: 760px;
       color: #fffaf5;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
     }
 
@@ -125,9 +125,8 @@
       color: #6a4026;
     }
 
-    .intro-box,
-    .card,
     .album-card,
+    .card,
     .link-box {
       background: rgba(255, 255, 255, 0.88);
       border: 1px solid rgba(180, 135, 92, 0.14);
@@ -168,8 +167,7 @@
 
     .album-card p,
     .card p,
-    .link-box p,
-    .intro-box p {
+    .link-box p {
       color: #5e5147;
       margin-bottom: 0;
     }
@@ -248,41 +246,12 @@
 
   <nav>
     <div class="container">
-      <a href="#about">소개</a>
       <a href="#music">음악</a>
       <a href="#poetry">시</a>
+      <a href="board.html" target="_blank">게시판</a>
       <a href="#contact">연락</a>
     </div>
   </nav>
-
-  <section id="about">
-    <div class="container two-column">
-      <div class="intro-box">
-        <h2>소개</h2>
-        <p>
-          안녕하세요. 저는 음악을 만들고, 글을 쓰며,
-          감정을 노래와 시의 언어로 풀어내는 창작자입니다.
-        </p>
-        <p>
-          한 곡의 멜로디와 한 줄의 문장이
-          누군가의 마음에 오래 남을 수 있기를 바라며,
-          저만의 감성과 이야기를 차곡차곡 쌓아가고 있습니다.
-        </p>
-        <p>
-          이 공간은 음악과 시가 함께 머무는 작은 서재이자,
-          창작의 시간들을 담아내는 따뜻한 기록장입니다.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>기본 프로필</h3>
-        <p><strong>이름:</strong> 추미정</p>
-        <p><strong>분야:</strong> 작곡 / 작사 / 시</p>
-        <p><strong>활동:</strong> 디지털 싱글 발매, 유튜브 채널 운영</p>
-        <p><strong>키워드:</strong> 감성 발라드, 서정, 이야기, 시적 표현</p>
-      </div>
-    </div>
-  </section>
 
   <section id="music">
     <div class="container">
@@ -378,6 +347,7 @@
         <div class="poem-box">
 한 줄의 문장이
 한 사람의 마음에 닿을 수 있다면
+
 
 한 곡의 노래는
 한 시절의 기억이 될 수 있으리라
