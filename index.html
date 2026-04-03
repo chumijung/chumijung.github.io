@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>나의 음악과 시</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      background: #111;
+      color: #f3f3f3;
+      line-height: 1.7;
+    }
+    a {
+      color: #f3f3f3;
+      text-decoration: none;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 14px;
+    }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    header {
+      background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      letter-spacing: 1px;
+    }
+    header p {
+      margin: 18px auto 0;
+      max-width: 700px;
+      color: #d0d0d0;
+      font-size: 1.1rem;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(10, 10, 10, 0.92);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+    }
+    nav .container {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+    nav a:hover {
+      color: #c9a96e;
+    }
+    section {
+      padding: 70px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .intro-box,
+    .card,
+    .album-card,
+    .link-box {
+      background: #1a1a1a;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 26px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+    .two-column {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+    }
+    .albums,
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .album-cover {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: linear-gradient(135deg, #333, #555);
+      border-radius: 14px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ddd;
+      font-size: 0.95rem;
+      text-align: center;
+      padding: 10px;
+    }
+    .album-card h3,
+    .card h3,
+    .link-box h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .album-card p,
+    .card p,
+    .link-box p,
+    .intro-box p {
+      color: #d4d4d4;
+      margin-bottom: 0;
+    }
+    .poem-box {
+      padding: 24px;
+      border-left: 4px solid #c9a96e;
+      background: #171717;
+      border-radius: 12px;
+      color: #dfdfdf;
+      white-space: pre-line;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 18px;
+      background: #c9a96e;
+      color: #111;
+      font-weight: bold;
+      border-radius: 12px;
+    }
+    .button:hover {
+      background: #dfbe81;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #b9b9b9;
+      background: #0d0d0d;
+    }
+    @media (max-width: 900px) {
+      .two-column,
+      .albums,
+      .links-grid {
+        grid-template-columns: 1fr;
+      }
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>나의 음악과 시</h1>
+      <p>
+        디지털 싱글 발매, 유튜브 채널 운영, 작곡과 작사,
+        그리고 시를 통해 나만의 감성과 이야기를 전합니다.
+      </p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="#about">소개</a>
+      <a href="#music">음악</a>
+      <a href="#youtube">유튜브</a>
+      <a href="#poetry">시</a>
+      <a href="#contact">연락</a>
+    </div>
+  </nav>
+
+  <section id="about">
+    <div class="container two-column">
+      <div class="intro-box">
+        <h2>소개</h2>
+        <p>
+          안녕하세요. 저는 음악을 만들고, 글을 쓰며,
+          감정을 노래와 시로 표현하는 창작자입니다.
+        </p>
+        <p>
+          디지털 싱글 음반을 발매해 왔고,
+          유튜브 채널을 통해 저의 음악 세계를 소개하고 있습니다.
+          동시에 시를 통해 언어의 울림과 감정의 결을 더 깊게 다듬고 있습니다.
+        </p>
+        <p>
+          이 홈페이지는 저의 음악, 글, 그리고 창작의 흔적을 한곳에 담기 위한 작은 공간입니다.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>기본 프로필</h3>
+        <p><strong>이름:</strong> 추미정</p>
+        <p><strong>분야:</strong> 작곡 / 작사 / 시</p>
+        <p><strong>활동:</strong> 디지털 싱글 발매, 유튜브 채널 운영</p>
+        <p><strong>키워드:</strong> 감성 발라드, 서정, 이야기, 시적 표현</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="music">
+    <div class="container">
+      <h2>음악</h2>
+      <div class="albums">
+        <div class="album-card">
+          <div class="album-cover">앨범 커버 이미지 1</div>
+          <h3>디지털 싱글 1</h3>
+          <p>나의 첫번째<br>싱글 음반〈너의 멜로디〉는<br> 
+섬세한 감정선을 담은<br> 발라드 곡으로,<br>
+일상의 작은 순간에 스며드는<br> 사랑의 기억을 노래한다.<br>
+보컬의 깊은 울림과<br> 절제된 편곡이 어우러져<br>
+잔잔하지만 오래 남는<br> 여운을 전한다.<br><br>
+			  발매일 : 2026년 2월 13일<br><br>
+
+[CREDIT]<br>Lyrics by 추미정<br>
+			Composed by 추미정<br>
+			Vocal by 추미정<br>
+			Arranged by 김태훈<br><br>
+		</p>
+			<p>영상으로 저의 음악을 만나보세요.</p>
+          <iframe width="0%" height="0"
+src="https://www.youtube.com/embed/https://www.youtube.com/channel/UCt6xEjj5dKY-ihigs8oSf1Q"
+frameborder="0">
+</iframe>
+
+<a class="button" href="https://www.youtube.com/channel/UCt6xEjj5dKY-ihigs8oSf1Q" target="_blank">
+유튜브 채널 바로가기
+</a>
+        </div>
+
+        <div class="album-card">
+          <div class="album-cover">앨범 커버 이미지 2</div>
+          <h3>디지털 싱글 2</h3>
+          <p>두번째 디지털 싱글 [독백]은<br> 이별 이후에도 쉽게 놓지 못하는<br>
+			  마음을 담은 감성 발라드이다. <br> 
+담담하게 흐르는 멜로디 위에<br> 조용히 스며드는 가사는 <br>
+괜찮다는 말 한마디를 기다리는<br> 마음을 섬세하게 표현한다. <br> 
+절제된 편곡과 따뜻한 보컬 톤이<br> 어우러져 깊은 여운을 남기는 곡이다.<br><br>
+			  발매일 : 2026년 3월 6일<br><br>
+
+[CREDIT]<br>
+Lyrics by 추미정<br>
+Composed by 추미정 <br> 
+Vocal by 추미정<br>
+Arranged by 김태훈 <br>
+</p>
+			<p>영상으로 저의 음악을 만나보세요.</p>
+         <iframe width="0%" height="0"
+src="https://www.youtube.com/embed/https://www.youtube.com/channel/UCt6xEjj5dKY-ihigs8oSf1Q"
+frameborder="0">
+</iframe>
+
+<a class="button" href="https://www.youtube.com/channel/UCt6xEjj5dKY-ihigs8oSf1Q" target="_blank">
+유튜브 채널 바로가기
+</a>
+        </div>
+
+        <div class="album-card">
+          <div class="album-cover">앨범 커버 이미지 3</div>
+          <h3>디지털 싱글 3</h3>
+          <p>이번 3번째 디지털 싱글 곡은<br> 
+시인 김승국님의 시를 바탕으로<br> 만들어졌으며,<br> 
+원작이 지닌 섬세한 감정을<br> 음악으로 풀어냈습니다.<br>
+김승국님의 대표시집으로는<br> [그리움으로 뜨는 별].<br><br>
+
+익숙했던 체온과 말들 속에<br> 담겨 있던 감정을 따라가며<br>
+시간이 흐른 뒤에야<br> 비로소 실감되는<br> 이별의 순간을 담아냈습니다.<br><br>
+
+계절이 다시 돌아오듯, <br>잊었다고 생각했던<br> 감정도 다시 스며들고<br>
+그날의 떨림과 온기가<br> 조용히 되살아납니다.<br><br>
+
+문학과 음악이 만난<br> 이 곡은<br>
+누군가의 기억 속<br> 첫눈처럼 오래 남는<br> 여운을 전합니다.<br><br>
+			  발매일 : 2026년 3월 31일 <br><br>
+
+[CREDIT]<br>
+Lyrics by 김승국<br>
+Composed by 추미정<br>
+Arranged by 김태훈 <br> 
+Vocal by 추미정</p>
+      
+
+<p>영상으로 저의 음악을 만나보세요.</p>
+
+<iframe width="0%" height="0"
+src="https://www.youtube.com/embed/영상ID"
+frameborder="0"
+allowfullscreen>
+</iframe>
+
+<a class="button" href="https://www.youtube.com/channel/UCt6xEjj5dKY-ihigs8oSf1Q" target="_blank">
+유튜브 채널 바로가기
+</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="youtube">
+    <div class="container">
+      <h2>유튜브 채널</h2>
+      <div class="card">
+        <h3>영상으로 만나는 나의 음악</h3>
+        <p>
+          유튜브 채널에서 음악, 작업 이야기, 창작의 흐름을 만나보실 수 있습니다.
+          아래 링크를 실제 유튜브 채널 주소로 바꿔 넣으세요.
+        </p>
+        <a class="button" href="#">유튜브 채널 바로가기</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="poetry">
+    <div class="container two-column">
+      <div>
+        <h2>시</h2>
+        <div class="poem-box">
+한 줄의 문장이
+한 사람의 마음에 닿을 수 있다면
+
+한 곡의 노래는
+한 시절의 기억이 될 수 있으리라
+
+나는 오늘도
+음악과 시 사이에서
+조용히 나를 적어 내려간다
+        </div>
+      </div>
+      <div class="card">
+        <h3>시의 세계</h3>
+        <p>
+          이 공간에는 제가 써 온 시와, 앞으로 발표할 작품들을 차차 담아갈 예정입니다.
+          간단한 대표 시 한 편을 먼저 올리고, 이후에는 시집 소개나 연재 형식으로 확장할 수 있습니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>연락</h2>
+      <div class="links-grid">
+        <div class="link-box">
+          <h3>이메일</h3>
+          <p>cmjpgh@naver.com</p>
+        </div>
+        <div class="link-box">
+          <h3>유튜브</h3>
+          <p>채널 링크를 입력하세요</p>
+        </div>
+        <div class="link-box">
+          <h3>음원 플랫폼</h3>
+          <p>멜론 / 지니 / 스포티파이 / 유튜브뮤직 링크</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 나의 음악과 시. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
