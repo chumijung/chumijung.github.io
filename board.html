@@ -41,8 +41,41 @@
     .sub-text {
       text-align: center;
       color: #7c6a5d;
-      margin-bottom: 35px;
+      margin-bottom: 28px;
       font-size: 1rem;
+    }
+
+    .login-guide {
+      background: rgba(255, 250, 245, 0.95);
+      border: 1px solid rgba(180, 135, 92, 0.16);
+      border-radius: 18px;
+      box-shadow: 0 8px 22px rgba(106, 64, 38, 0.06);
+      padding: 22px 20px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .login-guide p {
+      margin: 0 0 14px;
+      color: #6a5648;
+      font-size: 0.98rem;
+    }
+
+    .login-button {
+      display: inline-block;
+      padding: 12px 18px;
+      background: linear-gradient(135deg, #d9a15f, #f0c98c);
+      color: #4a321f;
+      font-weight: bold;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(176, 109, 59, 0.18);
+      transition: all 0.2s ease;
+    }
+
+    .login-button:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #e2af72, #f6d7a7);
+      color: #4a321f;
     }
 
     .board-wrap {
@@ -94,6 +127,10 @@
       .board-wrap {
         padding: 20px 16px;
       }
+
+      .login-guide {
+        padding: 18px 14px;
+      }
     }
   </style>
 </head>
@@ -101,6 +138,13 @@
   <div class="container">
     <h1>방명록</h1>
     <p class="sub-text">방문해주신 분들의 따뜻한 글과 인사를 남겨주세요.</p>
+
+    <div class="login-guide">
+      <p>방명록 작성은 Disqus 계정 또는 SNS 로그인 후 이용할 수 있습니다.</p>
+      <a class="login-button" href="https://disqus.com/profile/login/" target="_blank">
+        🔐 로그인 하러 가기
+      </a>
+    </div>
 
     <div class="board-wrap">
       <div id="disqus_thread"></div>
