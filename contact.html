@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>연락 | 추미정의 오선지와 원고지</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      background: linear-gradient(to bottom, #fffdf8, #f8f4ec);
+      color: #4b4036;
+      line-height: 1.8;
+    }
+
+    a {
+      color: #7a4e2d;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #b06d3b;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      position: relative;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      color: #fff;
+      background: #d8c2a8;
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(90, 60, 35, 0.25),
+          rgba(120, 85, 55, 0.40)
+        );
+    }
+
+    header .container {
+      position: relative;
+      z-index: 2;
+      padding: 0 20px 40px;
+      align-self: flex-end;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      letter-spacing: 1px;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.30);
+    }
+
+    header p {
+      margin: 16px auto 0;
+      max-width: 760px;
+      color: #fffaf5;
+      font-size: 1.05rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 250, 244, 0.92);
+      border-bottom: 1px solid rgba(122, 78, 45, 0.12);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-weight: 600;
+      color: #7a4e2d;
+    }
+
+    section {
+      padding: 75px 0;
+      border-bottom: 1px solid rgba(122, 78, 45, 0.08);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #6a4026;
+      text-align: center;
+    }
+
+    .contact-intro {
+      max-width: 760px;
+      margin: 0 auto 36px;
+      text-align: center;
+      color: #6a5648;
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .link-box {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(180, 135, 92, 0.14);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 10px 28px rgba(106, 64, 38, 0.08);
+      text-align: center;
+    }
+
+    .link-box h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: #6a4026;
+    }
+
+    .link-box p {
+      margin: 0;
+      color: #5e5147;
+      word-break: break-word;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 18px;
+      background: linear-gradient(135deg, #d9a15f, #f0c98c);
+      color: #4a321f;
+      font-weight: bold;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(176, 109, 59, 0.18);
+      transition: all 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #e2af72, #f6d7a7);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #8b7768;
+      background: #f4ede4;
+    }
+
+    @media (max-width: 900px) {
+      .links-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        min-height: 340px;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="header-video.mp4" type="video/mp4">
+      브라우저가 video 태그를 지원하지 않습니다.
+    </video>
+    <div class="hero-overlay"></div>
+
+    <div class="container">
+      <h1>연락</h1>
+      <p>
+        음악과 시에 관한 이야기,
+        작업 문의와 따뜻한 인사를 전할 수 있는 공간입니다.
+      </p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="index.html">홈</a>
+      <a href="music.html">음악</a>
+      <a href="poet.html">시</a>
+      <a href="board.html" target="_blank">방명록</a>
+      <a href="contact.html">연락</a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="container">
+      <h2>함께 연결되는 공간</h2>
+      <p class="contact-intro">
+        아래의 연락처와 채널을 통해 작품 소식과 음악을 만나보실 수 있습니다.
+        천천히 머물다 가셔도 좋고, 짧은 인사 한마디를 남겨주셔도 좋습니다.
+      </p>
+
+      <div class="links-grid">
+        <div class="link-box">
+          <h3>이메일</h3>
+          <p>cmjpgh@naver.com</p>
+          <a class="button" href="mailto:cmjpgh@naver.com">메일 보내기</a>
+        </div>
+
+        <div class="link-box">
+          <h3>유튜브</h3>
+          <p>추미정 음악 채널로 이동하실 수 있습니다.</p>
+          <a class="button" href="https://www.youtube.com/channel/UCt6xEjj5dKY-ihigs8oSf1Q" target="_blank">
+            채널 바로가기
+          </a>
+        </div>
+
+        <div class="link-box">
+          <h3>음원 플랫폼</h3>
+          <p>
+            멜론 / 지니 / 스포티파이 / 유튜브뮤직 등
+            다양한 플랫폼에서 음악을 감상하실 수 있습니다.
+          </p>
+          <a class="button" href="music.html">음악 페이지 보기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 추미정의 오선지와 원고지. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
