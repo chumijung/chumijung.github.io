@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>음악 | 추미정의 오선지와 원고지</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      background: linear-gradient(to bottom, #fffdf8, #f8f4ec);
+      color: #4b4036;
+      line-height: 1.8;
+    }
+
+    a {
+      color: #7a4e2d;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #b06d3b;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 14px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      position: relative;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      color: #fff;
+      background: #d8c2a8;
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(90, 60, 35, 0.25),
+          rgba(120, 85, 55, 0.40)
+        );
+    }
+
+    header .container {
+      position: relative;
+      z-index: 2;
+      padding: 0 20px 40px;
+      align-self: flex-end;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      letter-spacing: 1px;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.30);
+    }
+
+    header p {
+      margin: 16px auto 0;
+      max-width: 760px;
+      color: #fffaf5;
+      font-size: 1.05rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 250, 244, 0.92);
+      border-bottom: 1px solid rgba(122, 78, 45, 0.12);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-weight: 600;
+      color: #7a4e2d;
+    }
+
+    section {
+      padding: 75px 0;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 24px;
+      color: #6a4026;
+      text-align: center;
+    }
+
+    .albums {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .album-card {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(180, 135, 92, 0.14);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 10px 28px rgba(106, 64, 38, 0.08);
+    }
+
+    .album-cover {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .album-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #6a4026;
+    }
+
+    .album-card p {
+      color: #5e5147;
+      margin-bottom: 0;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 18px;
+      background: linear-gradient(135deg, #d9a15f, #f0c98c);
+      color: #4a321f;
+      font-weight: bold;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(176, 109, 59, 0.18);
+      transition: all 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #e2af72, #f6d7a7);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #8b7768;
+      background: #f4ede4;
+    }
+
+    @media (max-width: 900px) {
+      .albums {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        min-height: 340px;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="header-video.mp4" type="video/mp4">
+      브라우저가 video 태그를 지원하지 않습니다.
+    </video>
+    <div class="hero-overlay"></div>
+
+    <div class="container">
+      <h1>음악</h1>
+      <p>
+        추미정의 디지털 싱글과 음악 이야기를 담아두는 공간입니다.
+      </p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="index.html">홈</a>
+      <a href="music.html">음악</a>
+      <a href="#">시</a>
+      <a href="board.html" target="_blank">방명록</a>
+      <a href="#">연락</a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="container">
+      <h2>디지털 싱글</h2>
+
+      <div class="albums">
+        <div class="album-card">
+          <img src="album1.jpg" alt="첫 번째 앨범 커버" class="album-cover">
+          <h3>디지털 싱글 1</h3>
+          <p>
+            나의 첫번째<br>싱글 음반〈너의 멜로디〉는<br>
+            섬세한 감정선을 담은<br> 발라드 곡으로,<br>
+            일상의 작은 순간에 스며드는<br> 사랑의 기억을 노래한다.<br>
+            보컬의 깊은 울림과<br> 절제된 편곡이 어우러져<br>
+            잔잔하지만 오래 남는<br> 여운을 전한다.<br><br>
+
+            발매일 : 2026년 2월 13일<br><br>
+
+            [CREDIT]<br>
+            Lyrics by 추미정<br>
+            Composed by 추미정<br>
+            Vocal by 추미정<br>
+            Arranged by 김태훈
+          </p>
+          <a class="button" href="https://www.youtube.com/channel/UCt6xEjj5dKY-ihigs8oSf1Q" target="_blank">
+            유튜브에서 듣기
+          </a>
+        </div>
+
+        <div class="album-card">
+          <img src="album2.jpg" alt="두번째 앨범 커버" class="album-cover">
+          <h3>디지털 싱글 2</h3>
+          <p>
+            두번째 디지털 싱글 [독백]은<br> 이별 이후에도 쉽게 놓지 못하는<br>
+            마음을 담은 감성 발라드이다. <br>
+            담담하게 흐르는 멜로디 위에<br> 조용히 스며드는 가사는 <br>
+            괜찮다는 말 한마디를 기다리는<br> 마음을 섬세하게 표현한다. <br>
+            절제된 편곡과 따뜻한 보컬 톤이<br> 어우러져 깊은 여운을 남기는 곡이다.<br><br>
+
+            발매일 : 2026년 3월 6일<br><br>
+
+            [CREDIT]<br>
+            Lyrics by 추미정<br>
+            Composed by 추미정<br>
+            Vocal by 추미정<br>
+            Arranged by 김태훈
+          </p>
+          <a class="button" href="https://www.youtube.com/channel/UCt6xEjj5dKY-ihigs8oSf1Q" target="_blank">
+            유튜브에서 듣기
+          </a>
+        </div>
+
+        <div class="album-card">
+          <img src="album3.jpg" alt="세번째 앨범 커버" class="album-cover">
+          <h3>디지털 싱글 3</h3>
+          <p>
+            이번 3번째 디지털 싱글 곡은<br>
+            시인 김승국님의 시를 바탕으로<br>
+            만들어졌으며,<br>
+            원작이 지닌 섬세한 감정을<br> 음악으로 풀어냈습니다.<br>
+            김승국님의 대표시집으로는<br> [그리움으로 뜨는 별].<br>
+            익숙했던 체온과 말들 속에<br> 담겨 있던 감정을 따라가며<br>
+            시간이 흐른 뒤에야 비로소 실감되는<br> 이별의 순간을 담아냈습니다.<br><br>
+
+            발매일 : 2026년 3월 31일 <br><br>
+
+            [CREDIT]<br>
+            Lyrics by 김승국<br>
+            Composed by 추미정<br>
+            Arranged by 김태훈 <br>
+            Vocal by 추미정
+          </p>
+          <a class="button" href="https://www.youtube.com/channel/UCt6xEjj5dKY-ihigs8oSf1Q" target="_blank">
+            유튜브에서 듣기
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 추미정의 오선지와 원고지. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
