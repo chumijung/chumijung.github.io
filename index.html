@@ -45,6 +45,7 @@
       text-align: center;
       overflow: hidden;
       color: #fff;
+      background: #d8c2a8;
     }
 
     header::before {
@@ -52,16 +53,15 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(rgba(120, 85, 55, 0.38), rgba(120, 85, 55, 0.38)),
-        url("profile.jpg") center 65% / cover no-repeat;
-      transform: scale(1.03);
+        linear-gradient(rgba(120, 85, 55, 0.28), rgba(120, 85, 55, 0.28)),
+        url("profile.jpg") center center / contain no-repeat;
     }
 
     header::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.08), rgba(255,248,240,0.25));
+      background: linear-gradient(to bottom, rgba(255,255,255,0.08), rgba(255,248,240,0.20));
     }
 
     header .container {
