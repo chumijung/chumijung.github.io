@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>게시판 | 추미정의 오선지와 원고지</title>
+  <title>방명록 | 추미정의 오선지와 원고지</title>
   <style>
     * { box-sizing: border-box; }
 
@@ -15,233 +15,120 @@
       line-height: 1.7;
     }
 
+    a {
+      color: #7a4e2d;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #b06d3b;
+    }
+
     .container {
       width: 90%;
-      max-width: 900px;
+      max-width: 980px;
       margin: 0 auto;
-      padding: 50px 0;
+      padding: 50px 0 70px;
     }
 
     h1 {
       text-align: center;
       color: #6a4026;
       margin-bottom: 10px;
+      font-size: 2.2rem;
     }
 
     .sub-text {
       text-align: center;
       color: #7c6a5d;
       margin-bottom: 35px;
+      font-size: 1rem;
     }
 
-    .board-wrap,
-    .post-form,
-    .post-item {
-      background: rgba(255, 255, 255, 0.9);
+    .board-wrap {
+      background: rgba(255, 255, 255, 0.92);
       border: 1px solid rgba(180, 135, 92, 0.14);
       border-radius: 20px;
       box-shadow: 0 10px 28px rgba(106, 64, 38, 0.08);
+      padding: 30px;
     }
 
-    .post-form {
-      padding: 28px;
-      margin-bottom: 30px;
+    .top-link-wrap {
+      text-align: center;
+      margin-top: 30px;
     }
 
-    .post-form input,
-    .post-form textarea {
-      width: 100%;
-      padding: 14px 16px;
-      margin-bottom: 14px;
-      border: 1px solid #dbc5af;
-      border-radius: 12px;
-      font-size: 1rem;
-      font-family: inherit;
-      background: #fffdfa;
-    }
-
-    .post-form textarea {
-      min-height: 140px;
-      resize: vertical;
-    }
-
-    .button {
+    .top-link {
       display: inline-block;
       padding: 12px 18px;
       background: linear-gradient(135deg, #d9a15f, #f0c98c);
       color: #4a321f;
       font-weight: bold;
-      border: none;
       border-radius: 12px;
-      cursor: pointer;
       box-shadow: 0 6px 16px rgba(176, 109, 59, 0.18);
+      transition: all 0.2s ease;
     }
 
-    .button:hover {
+    .top-link:hover {
+      transform: translateY(-2px);
       background: linear-gradient(135deg, #e2af72, #f6d7a7);
+      color: #4a321f;
     }
 
-    .board-wrap {
-      padding: 28px;
-    }
-
-    .board-title {
-      font-size: 1.3rem;
-      color: #6a4026;
-      margin-top: 0;
-      margin-bottom: 20px;
-    }
-
-    .post-item {
-      padding: 20px;
-      margin-bottom: 18px;
-    }
-
-    .post-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .post-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
-
-    .post-author {
-      font-weight: bold;
-      color: #6a4026;
-    }
-
-    .post-date {
-      color: #8c7b6f;
-      font-size: 0.95rem;
-    }
-
-    .post-content {
-      white-space: pre-line;
-      color: #57493f;
-    }
-
-    .empty-text {
-      color: #8c7b6f;
+    footer {
       text-align: center;
-      padding: 20px 0;
+      padding: 30px 20px 40px;
+      color: #8b7768;
     }
 
-    .notice {
-      margin-top: 14px;
-      font-size: 0.92rem;
-      color: #8c7b6f;
-    }
+    @media (max-width: 768px) {
+      .container {
+        width: 92%;
+        padding: 35px 0 50px;
+      }
 
-    .top-link {
-      display: inline-block;
-      margin-top: 26px;
-      color: #7a4e2d;
-      font-weight: 600;
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .board-wrap {
+        padding: 20px 16px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>게시판</h1>
-    <p class="sub-text">방문자분들의 짧은 글과 인사를 남길 수 있는 공간입니다.</p>
-
-    <div class="post-form">
-      <input type="text" id="author" placeholder="이름을 입력해 주세요" />
-      <textarea id="content" placeholder="남기고 싶은 글을 입력해 주세요"></textarea>
-      <button class="button" onclick="addPost()">글 남기기</button>
-      <p class="notice">
-        ※ 현재 이 게시판은 테스트용으로, 작성한 글은 해당 브라우저에서만 저장됩니다.
-      </p>
-    </div>
+    <h1>방명록</h1>
+    <p class="sub-text">방문해주신 분들의 따뜻한 글과 인사를 남겨주세요.</p>
 
     <div class="board-wrap">
-      <h2 class="board-title">남겨진 글</h2>
-      <div id="postList"></div>
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https://chumijung.github.io/board.html';
+          this.page.identifier = 'guestbook-board';
+        };
+
+        (function() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://chumijung.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>
+        JavaScript를 활성화해야 방명록을 볼 수 있습니다.
+      </noscript>
     </div>
 
-    <a class="top-link" href="index.html">← 홈페이지로 돌아가기</a>
+    <div class="top-link-wrap">
+      <a class="top-link" href="index.html">홈페이지로 돌아가기</a>
+    </div>
   </div>
 
-  <script>
-    function getPosts() {
-      return JSON.parse(localStorage.getItem("mj_board_posts") || "[]");
-    }
-
-    function savePosts(posts) {
-      localStorage.setItem("mj_board_posts", JSON.stringify(posts));
-    }
-
-    function renderPosts() {
-      const postList = document.getElementById("postList");
-      const posts = getPosts();
-
-      if (posts.length === 0) {
-        postList.innerHTML = '<p class="empty-text">아직 남겨진 글이 없습니다. 첫 글을 남겨보세요.</p>';
-        return;
-      }
-
-      postList.innerHTML = posts
-        .slice()
-        .reverse()
-        .map(post => `
-          <div class="post-item">
-            <div class="post-header">
-              <div class="post-author">${escapeHtml(post.author)}</div>
-              <div class="post-date">${post.date}</div>
-            </div>
-            <div class="post-content">${escapeHtml(post.content).replace(/\n/g, "<br>")}</div>
-          </div>
-        `)
-        .join("");
-    }
-
-    function addPost() {
-      const authorInput = document.getElementById("author");
-      const contentInput = document.getElementById("content");
-
-      const author = authorInput.value.trim();
-      const content = contentInput.value.trim();
-
-      if (!author || !content) {
-        alert("이름과 내용을 모두 입력해 주세요.");
-        return;
-      }
-
-      const now = new Date();
-      const dateText =
-        now.getFullYear() + "." +
-        String(now.getMonth() + 1).padStart(2, "0") + "." +
-        String(now.getDate()).padStart(2, "0") + " " +
-        String(now.getHours()).padStart(2, "0") + ":" +
-        String(now.getMinutes()).padStart(2, "0");
-
-      const posts = getPosts();
-      posts.push({
-        author,
-        content,
-        date: dateText
-      });
-
-      savePosts(posts);
-      authorInput.value = "";
-      contentInput.value = "";
-      renderPosts();
-    }
-
-    function escapeHtml(text) {
-      return text
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-    }
-
-    renderPosts();
-  </script>
+  <footer>
+    <p>© 2026 추미정의 오선지와 원고지. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
