@@ -164,7 +164,7 @@
     .card h3,
     .poem-card h3 {
       margin-top: 0;
-      margin-bottom: 12px;
+      margin-bottom: 0;
       color: #6a4026;
     }
 
@@ -192,8 +192,6 @@
     }
 
     .poem-card {
-
-      position: relative;
       min-height: 170px;
       transition: all 0.25s ease;
       cursor: pointer;
@@ -207,13 +205,18 @@
       background: rgba(255, 252, 247, 0.98);
     }
 
+    .poem-title-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
     .click-badge {
-      position: absolute;
-      right: 16px;
-      bottom: 12px;
-      width: 110px;
+      width: 120px;
       height: auto;
-      pointer-events: none;
+      display: inline-block;
+      flex-shrink: 0;
     }
 
     footer {
@@ -251,7 +254,7 @@
       }
 
       .click-badge {
-        width: 95px;
+        width: 68px;
       }
     }
   </style>
@@ -320,16 +323,18 @@
           rel="noopener noreferrer"
         >
           <div class="poem-card">
-            <h3>시 한 편 1</h3>
+            <div class="poem-title-row">
+              <h3>시 한 편 1</h3>
+              <img
+                class="click-badge"
+                src="https://chumijung.github.io/click.png"
+                alt="Click"
+              />
+            </div>
             <p>
               [관세음보살]<br>
               전국 문학인 꽃축제 제6회 꽃시백일장 일반부 장원 수상작
             </p>
-            <img
-              class="click-badge"
-              src="https://chumijung.github.io/click.png"
-              alt="Click"
-            />
           </div>
         </a>
 
@@ -340,16 +345,18 @@
           rel="noopener noreferrer"
         >
           <div class="poem-card">
-            <h3>시 한 편 2</h3>
+            <div class="poem-title-row">
+              <h3>시 한 편 2</h3>
+              <img
+                class="click-badge"
+                src="https://chumijung.github.io/click.png"
+                alt="Click"
+              />
+            </div>
             <p>
               [불편한 진실 인공지능에게.AI]<br>
               제 62회 진해군항제 전국백일장 차하작
             </p>
-            <img
-              class="click-badge"
-              src="https://chumijung.github.io/click.png"
-              alt="Click"
-            />
           </div>
         </a>
 
