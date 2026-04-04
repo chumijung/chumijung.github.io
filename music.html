@@ -16,23 +16,13 @@
     }
 
     a {
-      color: #7a4e2d;
+      color: inherit;
       text-decoration: none;
-    }
-
-    a:hover {
-      color: #b06d3b;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-      border-radius: 14px;
     }
 
     .container {
       width: 90%;
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
     }
 
@@ -61,18 +51,17 @@
       position: absolute;
       inset: 0;
       z-index: 1;
-      background:
-        linear-gradient(
-          to bottom,
-          rgba(90, 60, 35, 0.25),
-          rgba(120, 85, 55, 0.40)
-        );
+      background: linear-gradient(
+        to bottom,
+        rgba(90, 60, 35, 0.25),
+        rgba(120, 85, 55, 0.42)
+      );
     }
 
     header .container {
       position: relative;
       z-index: 2;
-      padding: 0 20px 40px;
+      padding: 20px 20px 40px;
       align-self: flex-end;
     }
 
@@ -134,65 +123,173 @@
     }
 
     section {
-      padding: 20px 0;
+      padding: 34px 0;
     }
 
-    h2 {
+    .section-title {
+      margin: 0 0 18px;
       font-size: 2rem;
-      margin-bottom: 24px;
       color: #6a4026;
-      text-align: center;
     }
 
-    .albums {
+    .section-desc {
+      margin: 0;
+      color: #6b5b4f;
+    }
+
+    .intro-box,
+    .featured-release,
+    .album-card {
+      background: rgba(255, 255, 255, 0.90);
+      border: 1px solid rgba(180, 135, 92, 0.16);
+      border-radius: 24px;
+      box-shadow: 0 10px 28px rgba(106, 64, 38, 0.08);
+    }
+
+    .intro-box {
+      padding: 30px;
+    }
+
+    .featured-release {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 30px;
+      padding: 28px;
+      align-items: center;
+    }
+
+    .featured-cover {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #efe3d4;
+      border: 1px solid rgba(180, 135, 92, 0.18);
+      box-shadow: 0 8px 22px rgba(106, 64, 38, 0.10);
+    }
+
+    .featured-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .featured-tag {
+      display: inline-block;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(217, 161, 95, 0.18);
+      color: #8a552e;
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .featured-title {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      color: #5b3922;
+    }
+
+    .featured-meta {
+      margin: 0 0 16px;
+      color: #8b7768;
+      font-size: 0.98rem;
+    }
+
+    .featured-text {
+      margin: 0 0 20px;
+      color: #5f5146;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.98rem;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(180, 135, 92, 0.22);
+      box-shadow: 0 4px 10px rgba(106, 64, 38, 0.06);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #d9a15f, #f0c98c);
+      color: #4a321f;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.92);
+      color: #6a4026;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .albums-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 24px;
     }
 
     .album-card {
-      background: rgba(255, 255, 255, 0.88);
-      border: 1px solid rgba(180, 135, 92, 0.14);
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: 0 10px 28px rgba(106, 64, 38, 0.08);
+      overflow: hidden;
+      transition: all 0.25s ease;
+    }
+
+    .album-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 34px rgba(106, 64, 38, 0.12);
     }
 
     .album-cover {
       width: 100%;
       aspect-ratio: 1 / 1;
+      background: #efe3d4;
+      overflow: hidden;
+    }
+
+    .album-cover img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      border-radius: 14px;
-      margin-bottom: 16px;
       display: block;
     }
 
-    .album-card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      color: #6a4026;
+    .album-info {
+      padding: 22px 22px 24px;
     }
 
-    .album-card p {
-      color: #5e5147;
-      margin-bottom: 0;
+    .album-title {
+      margin: 0 0 6px;
+      font-size: 1.3rem;
+      color: #5b3922;
     }
 
-    .button {
-      display: inline-block;
-      margin-top: 18px;
-      padding: 12px 18px;
-      background: linear-gradient(135deg, #d9a15f, #f0c98c);
-      color: #4a321f;
-      font-weight: bold;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(176, 109, 59, 0.18);
-      transition: all 0.2s ease;
+    .album-date {
+      margin: 0 0 12px;
+      color: #8b7768;
+      font-size: 0.95rem;
     }
 
-    .button:hover {
-      transform: translateY(-2px);
-      background: linear-gradient(135deg, #e2af72, #f6d7a7);
+    .album-desc {
+      margin: 0 0 18px;
+      color: #5f5146;
+      min-height: 86px;
+    }
+
+    .archive-note {
+      margin-top: 16px;
+      color: #8a7767;
+      font-size: 0.96rem;
     }
 
     footer {
@@ -200,13 +297,20 @@
       padding: 40px 20px;
       color: #8b7768;
       background: #f4ede4;
+      margin-top: 20px;
     }
 
-    @media (max-width: 900px) {
-      .albums {
+    @media (max-width: 1000px) {
+      .featured-release {
         grid-template-columns: 1fr;
       }
 
+      .albums-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
       header {
         min-height: 340px;
       }
@@ -223,6 +327,18 @@
         font-size: 1rem;
         padding: 10px 18px;
       }
+
+      .featured-title {
+        font-size: 1.6rem;
+      }
+
+      .section-title {
+        font-size: 1.7rem;
+      }
+
+      .albums-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -237,7 +353,8 @@
     <div class="container">
       <h1>음악</h1>
       <p>
-        추미정의 디지털 싱글과 음악 이야기를 담아두는 공간입니다.
+        발매된 곡들과 앞으로 이어질 작품들을 모아두는 공간입니다.
+        한 곡의 감정과 이야기, 노랫말과 악보까지 함께 기록합니다.
       </p>
     </div>
   </header>
@@ -254,80 +371,128 @@
 
   <section>
     <div class="container">
-      <h2>- 발매 음반 -</h2>
+      <div class="intro-box">
+        <h2 class="section-title">발매 음반</h2>
+        <p class="section-desc">
+          이곳에는 발매된 디지털 싱글과 앞으로 발표할 작품들을 차곡차곡 담아갈 예정입니다.
+          각 곡마다 감상 링크와 함께 노랫말, 악보 페이지까지 연결하여
+          한 편의 작품처럼 오래 남도록 정리해 나가고자 합니다.
+        </p>
+      </div>
+    </div>
+  </section>
 
-      <div class="albums">
-        <div class="album-card">
-          <img src="album1.jpg" alt="첫 번째 앨범 커버" class="album-cover">
-          <h3>디지털 싱글 1</h3>
-          <p>
-            나의 첫번째<br>싱글 음반〈너의 멜로디〉는<br>
-            섬세한 감정선을 담은<br> 발라드 곡으로,<br>
-            일상의 작은 순간에 스며드는<br> 사랑의 기억을 노래한다.<br>
-            보컬의 깊은 울림과<br> 절제된 편곡이 어우러져<br>
-            잔잔하지만 오래 남는<br> 여운을 전한다.<br><br>
+  <section>
+    <div class="container">
+      <h2 class="section-title">최신 발매</h2>
 
-            발매일 : 2026년 2월 13일<br><br>
-
-            [CREDIT]<br>
-            Lyrics by 추미정<br>
-            Composed by 추미정<br>
-            Vocal by 추미정<br>
-            Arranged by 김태훈
-          </p>
-          <a class="button" href="https://www.youtube.com/channel/UCt6xEjj5dKY-ihigs8oSf1Q" target="_blank">
-            유튜브에서 듣기
-          </a>
+      <div class="featured-release">
+        <div class="featured-cover">
+          <img src="album-monologue.jpg" alt="독백 앨범 커버">
         </div>
 
-        <div class="album-card">
-          <img src="album2.jpg" alt="두번째 앨범 커버" class="album-cover">
-          <h3>디지털 싱글 2</h3>
-          <p>
-            두번째 디지털 싱글 [독백]은<br> 이별 이후에도 쉽게 놓지 못하는<br>
-            마음을 담은 감성 발라드이다. <br>
-            담담하게 흐르는 멜로디 위에<br> 조용히 스며드는 가사는 <br>
-            괜찮다는 말 한마디를 기다리는<br> 마음을 섬세하게 표현한다. <br>
-            절제된 편곡과 따뜻한 보컬 톤이<br> 어우러져 깊은 여운을 남기는 곡이다.<br><br>
-
-            발매일 : 2026년 3월 6일<br><br>
-
-            [CREDIT]<br>
-            Lyrics by 추미정<br>
-            Composed by 추미정<br>
-            Vocal by 추미정<br>
-            Arranged by 김태훈
+        <div>
+          <span class="featured-tag">LATEST RELEASE</span>
+          <h3 class="featured-title">독백</h3>
+          <p class="featured-meta">디지털 싱글 · 2026.03</p>
+          <p class="featured-text">
+            이별 이후에도 쉽게 끝나지 않는 감정의 잔향과,
+            마음속에서 혼잣말처럼 맴도는 문장들을 담은 감성 발라드입니다.
+            곡의 정서와 함께 노랫말과 악보도 따로 이어볼 수 있도록 구성했습니다.
           </p>
-          <a class="button" href="https://www.youtube.com/channel/UCt6xEjj5dKY-ihigs8oSf1Q" target="_blank">
-            유튜브에서 듣기
-          </a>
-        </div>
 
-        <div class="album-card">
-          <img src="album3.jpg" alt="세번째 앨범 커버" class="album-cover">
-          <h3>디지털 싱글 3</h3>
-          <p>
-            이번 3번째 디지털 싱글 곡은<br>
-            시인 김승국님의 시를 바탕으로<br>
-            만들어졌으며,<br>
-            원작이 지닌 섬세한 감정을<br> 음악으로 풀어냈습니다.<br>
-            김승국님의 대표시집으로는<br> [그리움으로 뜨는 별].<br>
-            익숙했던 체온과 말들 속에<br> 담겨 있던 감정을 따라가며<br>
-            시간이 흐른 뒤에야 비로소 실감되는<br> 이별의 순간을 담아냈습니다.<br><br>
-
-            발매일 : 2026년 3월 31일 <br><br>
-
-            [CREDIT]<br>
-            Lyrics by 김승국<br>
-            Composed by 추미정<br>
-            Arranged by 김태훈 <br>
-            Vocal by 추미정
-          </p>
-          <a class="button" href="https://www.youtube.com/channel/UCt6xEjj5dKY-ihigs8oSf1Q" target="_blank">
-            유튜브에서 듣기
-          </a>
+          <div class="button-row">
+            <a class="btn btn-primary" href="song-monologue.html">작품 페이지</a>
+            <a class="btn btn-secondary" href="lyrics-monologue.html">노랫말</a>
+            <a class="btn btn-secondary" href="score-monologue.pdf" target="_blank">악보</a>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">전체 음반</h2>
+
+      <div class="albums-grid">
+
+        <div class="album-card">
+          <div class="album-cover">
+            <img src="album-monologue.jpg" alt="독백 앨범 커버">
+          </div>
+          <div class="album-info">
+            <h3 class="album-title">독백</h3>
+            <p class="album-date">2026.03 · 디지털 싱글</p>
+            <p class="album-desc">
+              이별 후에도 마음속에 남아 스스로에게 되묻게 되는 감정을 담은 곡.
+            </p>
+            <div class="button-row">
+              <a class="btn btn-primary" href="song-monologue.html">감상하기</a>
+              <a class="btn btn-secondary" href="lyrics-monologue.html">노랫말</a>
+              <a class="btn btn-secondary" href="score-monologue.pdf" target="_blank">악보</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="album-card">
+          <div class="album-cover">
+            <img src="album-melody.jpg" alt="너의 멜로디 앨범 커버">
+          </div>
+          <div class="album-info">
+            <h3 class="album-title">너의 멜로디</h3>
+            <p class="album-date">2026.02 · 디지털 싱글</p>
+            <p class="album-desc">
+              한 사람의 기억과 감정이 마음속 선율처럼 오래 남는 순간을 담은 발라드.
+            </p>
+            <div class="button-row">
+              <a class="btn btn-primary" href="song-melody.html">감상하기</a>
+              <a class="btn btn-secondary" href="lyrics-melody.html">노랫말</a>
+              <a class="btn btn-secondary" href="score-melody.pdf" target="_blank">악보</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="album-card">
+          <div class="album-cover">
+            <img src="album-firstlove.jpg" alt="첫사랑 앨범 커버">
+          </div>
+          <div class="album-info">
+            <h3 class="album-title">첫사랑</h3>
+            <p class="album-date">2026.03 · 디지털 싱글</p>
+            <p class="album-desc">
+              지나간 시간 속에 남겨진 첫 감정의 떨림과 그리움을 조용히 되짚는 곡.
+            </p>
+            <div class="button-row">
+              <a class="btn btn-primary" href="song-firstlove.html">감상하기</a>
+              <a class="btn btn-secondary" href="lyrics-firstlove.html">노랫말</a>
+              <a class="btn btn-secondary" href="score-firstlove.pdf" target="_blank">악보</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="album-card">
+          <div class="album-cover">
+            <img src="album-comingsoon.jpg" alt="다음 발매곡">
+          </div>
+          <div class="album-info">
+            <h3 class="album-title">다음 발매 예정</h3>
+            <p class="album-date">COMING SOON</p>
+            <p class="album-desc">
+              앞으로 이어질 새로운 싱글과 그 안에 담길 감정들을 이 공간에 계속 채워갈 예정입니다.
+            </p>
+            <div class="button-row">
+              <a class="btn btn-secondary" href="#">준비중</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="archive-note">
+        새 음원이 발매될 때마다 아래 음반 카드 하나를 복사해서 제목, 이미지, 링크만 바꾸면
+        같은 형식으로 계속 추가할 수 있습니다.
+      </p>
     </div>
   </section>
 
