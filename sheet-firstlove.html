@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>첫사랑 - 악보 | 추미정의 오선지와 원고지</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      background: linear-gradient(to bottom, #fffdf8, #f8f4ec);
+      color: #4b4036;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: #d8c2a8;
+      color: #fff;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      text-align: center;
+      padding: 16px;
+      background: #fffaf4;
+      border-bottom: 1px solid #eee;
+    }
+
+    nav a {
+      margin: 0 10px;
+      font-weight: bold;
+      color: #6a4026;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #b06d3b;
+    }
+
+    .pdf-box {
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid rgba(180,135,92,0.2);
+    }
+
+    iframe {
+      width: 100%;
+      height: 80vh;
+      border: none;
+    }
+
+    .fallback {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      margin-top: 10px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #d9a15f, #f0c98c);
+      color: #4a321f;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #8b7768;
+      background: #f4ede4;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 700px) {
+      iframe {
+        height: 65vh;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>첫사랑 악보</h1>
+    <p>Score Sheet</p>
+  </header>
+
+  <nav>
+    <a href="index.html">홈</a>
+    <a href="music.html">음악</a>
+    <a href="song-firstlove.html">작품 페이지</a>
+  </nav>
+
+  <div class="container">
+
+    <div class="pdf-box">
+
+      <!-- PDF 표시 영역 -->
+      <iframe src="score-firstlove.pdf"></iframe>
+
+      <!-- 모바일 fallback -->
+      <div class="fallback">
+        <p>📄 모바일에서 악보가 보이지 않는 경우 아래 버튼을 눌러주세요.</p>
+        <a class="btn" href="score-firstlove.pdf" target="_blank">
+          악보 열기 / 다운로드
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 추미정의 오선지와 원고지. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
