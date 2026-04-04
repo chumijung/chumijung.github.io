@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>첫사랑 - 노랫말 | 추미정의 오선지와 원고지</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      background: linear-gradient(to bottom, #fffdf8, #f8f4ec);
+      color: #4b4036;
+      line-height: 2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      position: relative;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      color: #fff;
+      background: #d8c2a8;
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        to bottom,
+        rgba(90, 60, 35, 0.25),
+        rgba(120, 85, 55, 0.42)
+      );
+    }
+
+    header .container {
+      position: relative;
+      z-index: 2;
+      padding: 20px 20px 36px;
+      align-self: flex-end;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.30);
+    }
+
+    header p {
+      margin: 12px auto 0;
+      max-width: 700px;
+      color: #fffaf5;
+      font-size: 1.02rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 250, 244, 0.92);
+      border-bottom: 1px solid rgba(122, 78, 45, 0.12);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      padding: 16px 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-weight: 600;
+      color: #6a4026;
+      padding: 12px 22px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(180, 135, 92, 0.25);
+      box-shadow: 0 4px 10px rgba(106, 64, 38, 0.08);
+      transition: all 0.2s ease;
+      font-size: 1.05rem;
+    }
+
+    nav a:hover {
+      background: linear-gradient(135deg, #e2af72, #f6d7a7);
+      color: #4a321f;
+      transform: translateY(-2px);
+    }
+
+    nav a.active {
+      background: linear-gradient(135deg, #d9a15f, #f0c98c);
+      color: #4a321f;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 36px 0;
+    }
+
+    .lyrics-box {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(180, 135, 92, 0.16);
+      border-radius: 24px;
+      box-shadow: 0 10px 28px rgba(106, 64, 38, 0.08);
+      padding: 34px 30px;
+    }
+
+    .lyrics-title {
+      margin: 0 0 10px;
+      font-size: 2rem;
+      color: #5b3922;
+      text-align: center;
+    }
+
+    .lyrics-meta {
+      margin: 0 0 28px;
+      text-align: center;
+      color: #8b7768;
+    }
+
+    .lyrics-text {
+      white-space: pre-line;
+      text-align: center;
+      color: #5a4d42;
+      font-size: 1.05rem;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.98rem;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(180, 135, 92, 0.22);
+      box-shadow: 0 4px 10px rgba(106, 64, 38, 0.06);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #d9a15f, #f0c98c);
+      color: #4a321f;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.92);
+      color: #6a4026;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #8b7768;
+      background: #f4ede4;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        min-height: 260px;
+      }
+
+      header h1 {
+        font-size: 2.1rem;
+      }
+
+      nav a {
+        font-size: 1rem;
+        padding: 10px 18px;
+      }
+
+      .lyrics-box {
+        padding: 28px 20px;
+      }
+
+      .lyrics-title {
+        font-size: 1.7rem;
+      }
+
+      .lyrics-text {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="header-video.mp4" type="video/mp4">
+      브라우저가 video 태그를 지원하지 않습니다.
+    </video>
+    <div class="hero-overlay"></div>
+
+    <div class="container">
+      <h1>첫사랑</h1>
+      <p>
+        노랫말 페이지
+      </p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="index.html">홈</a>
+      <a href="music.html" class="active">음악</a>
+      <a href="poet.html">시</a>
+      <a href="board.html" target="_blank">방명록</a>
+      <a href="contact.html">연락</a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="container">
+      <div class="lyrics-box">
+        <h2 class="lyrics-title">첫사랑</h2>
+        <p class="lyrics-meta">Lyrics</p>
+
+        <div class="lyrics-text">
+[김승국]
+눈길을 나란히 걸었어요 
+걷지 않을 수 없는 것처럼
+가로등 온 힘을 다해 
+일정한 간격으로 우릴 비추고
+발자국만 봐도 
+알 수 있는 그날의 말들과 체온
+손을 잡으면 울음 터질 것 같습니다
+비를 맞고 
+햇살에 투정 부리던 그때처럼
+가슴 떨려요
+계절은 가고 
+돌아서면 다시 계절은 오고
+숨 막히도록 빠른 속도로 
+커버린 이별 다시 배웁니다
+이미 내린 첫눈 
+지금 맞고 있는것처럼
+        </div>
+
+        <div class="button-row">
+          <a class="btn btn-primary" href="song-firstlove.html">작품 페이지</a>
+          <a class="btn btn-secondary" href="music.html">전체 음반</a>
+          <a class="btn btn-secondary" href="score-firstlove.pdf" target="_blank">악보 보기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 추미정의 오선지와 원고지. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
