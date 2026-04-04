@@ -181,6 +181,41 @@
       margin-top: 28px;
     }
 
+    .poem-link {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .poem-link:hover {
+      color: inherit;
+    }
+
+    .poem-card {
+
+      position: relative;
+      min-height: 170px;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .poem-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 32px rgba(106, 64, 38, 0.14);
+      border-color: rgba(216, 161, 93, 0.45);
+      background: rgba(255, 252, 247, 0.98);
+    }
+
+    .click-badge {
+      position: absolute;
+      right: 16px;
+      bottom: 12px;
+      width: 110px;
+      height: auto;
+      pointer-events: none;
+    }
+
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -209,6 +244,14 @@
       nav a {
         font-size: 1rem;
         padding: 10px 18px;
+      }
+
+      .poem-card {
+        min-height: 150px;
+      }
+
+      .click-badge {
+        width: 95px;
       }
     }
   </style>
@@ -246,15 +289,13 @@
         <h2>대표 시</h2>
         <div class="poem-box">
 한 줄의 문장이
-한 사람의 마음에 닿을 수 있다면
-
-
+한 사람의 마음에 닿을 수 있다면.
 한 곡의 노래는
-한 시절의 기억이 될 수 있으리라
+한 시절의 기억이 될 수 있으리라.
 
 나는 오늘도
 음악과 시 사이에서
-조용히 나를 적어 내려간다
+조용히 나를 적어 내려간다.
         </div>
       </div>
 
@@ -271,22 +312,47 @@
 
     <div class="container">
       <div class="poem-list">
-        <div class="poem-card">
-          <h3>시 한 편 1</h3>
-          <p>
-            아직 꾸미기가 진행중입니다.<br>
-            빠른 시일내 꾸며 놓겠습니다.<br>
-            
-          </p>
-        </div>
 
-        <div class="poem-card">
-          <h3>시 한 편 2</h3>
-          <p>
-            아직 꾸미기가 진행중입니다.<br>
-            빠른 시일내 꾸며 놓겠습니다.<br>
-          </p>
-        </div>
+        <a
+          class="poem-link"
+          href="https://raw.githubusercontent.com/chumijung/chumijung.github.io/main/poem1.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="poem-card">
+            <h3>시 한 편 1</h3>
+            <p>
+              [관세음보살]<br>
+              전국 문학인 꽃축제 제6회 꽃시백일장 일반부 장원 수상작
+            </p>
+            <img
+              class="click-badge"
+              src="https://raw.githubusercontent.com/chumijung/chumijung.github.io/main/click%28jpg%29"
+              alt="Click"
+            />
+          </div>
+        </a>
+
+        <a
+          class="poem-link"
+          href="https://raw.githubusercontent.com/chumijung/chumijung.github.io/main/poem2.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="poem-card">
+            <h3>시 한 편 2</h3>
+            <p>
+              [불편한 진실 인공지능에게.AI]<br>
+              제 62회 진해군항제 전국백일장 차하작
+            </p>
+            <img
+              class="click-badge"
+              src="https://raw.githubusercontent.com/chumijung/chumijung.github.io/main/click%28jpg%29"
+              alt="Click"
+            />
+          </div>
+        </a>
+
       </div>
     </div>
   </section>
