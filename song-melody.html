@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>너의 멜로디 | 추미정의 오선지와 원고지</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      background: linear-gradient(to bottom, #fffdf8, #f8f4ec);
+      color: #4b4036;
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      position: relative;
+      min-height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      color: #fff;
+      background: #d8c2a8;
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        to bottom,
+        rgba(90, 60, 35, 0.25),
+        rgba(120, 85, 55, 0.42)
+      );
+    }
+
+    header .container {
+      position: relative;
+      z-index: 2;
+      padding: 20px 20px 40px;
+      align-self: flex-end;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.30);
+    }
+
+    header p {
+      margin: 14px auto 0;
+      max-width: 760px;
+      color: #fffaf5;
+      font-size: 1.05rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 250, 244, 0.92);
+      border-bottom: 1px solid rgba(122, 78, 45, 0.12);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      padding: 16px 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-weight: 600;
+      color: #6a4026;
+      padding: 12px 22px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(180, 135, 92, 0.25);
+      box-shadow: 0 4px 10px rgba(106, 64, 38, 0.08);
+      transition: all 0.2s ease;
+      font-size: 1.05rem;
+    }
+
+    nav a:hover {
+      background: linear-gradient(135deg, #e2af72, #f6d7a7);
+      color: #4a321f;
+      transform: translateY(-2px);
+    }
+
+    nav a.active {
+      background: linear-gradient(135deg, #d9a15f, #f0c98c);
+      color: #4a321f;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 34px 0;
+    }
+
+    .song-layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .cover-box,
+    .info-box,
+    .story-box,
+    .link-box {
+      background: rgba(255, 255, 255, 0.90);
+      border: 1px solid rgba(180, 135, 92, 0.16);
+      border-radius: 24px;
+      box-shadow: 0 10px 28px rgba(106, 64, 38, 0.08);
+    }
+
+    .cover-box {
+      overflow: hidden;
+    }
+
+    .cover-box img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .info-box,
+    .story-box,
+    .link-box {
+      padding: 28px;
+    }
+
+    .song-title {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      color: #5b3922;
+    }
+
+    .song-meta {
+      margin: 0 0 16px;
+      color: #8b7768;
+    }
+
+    .song-text {
+      margin: 0;
+      color: #5f5146;
+    }
+
+    .sub-title {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      color: #6a4026;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.98rem;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(180, 135, 92, 0.22);
+      box-shadow: 0 4px 10px rgba(106, 64, 38, 0.06);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #d9a15f, #f0c98c);
+      color: #4a321f;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.92);
+      color: #6a4026;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #8b7768;
+      background: #f4ede4;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        min-height: 300px;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      .song-layout {
+        grid-template-columns: 1fr;
+      }
+
+      nav a {
+        font-size: 1rem;
+        padding: 10px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="header-video.mp4" type="video/mp4">
+      브라우저가 video 태그를 지원하지 않습니다.
+    </video>
+    <div class="hero-overlay"></div>
+
+    <div class="container">
+      <h1>너의 멜로디</h1>
+      <p>
+        오래 남는 기억은 종종
+        한 사람의 선율처럼 마음에 머물곤 합니다.
+      </p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="index.html">홈</a>
+      <a href="music.html" class="active">음악</a>
+      <a href="poet.html">시</a>
+      <a href="board.html" target="_blank">방명록</a>
+      <a href="contact.html">연락</a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="container">
+      <div class="song-layout">
+
+        <div class="cover-box">
+          <img src="album1.jpg" alt="너의 멜로디 앨범 커버">
+        </div>
+
+        <div class="info-box">
+          <h2 class="song-title">너의 멜로디</h2>
+          <p class="song-meta">디지털 싱글 · 2026.02</p>
+          <p class="song-text">
+            <strong>Vocal</strong> 추미정<br>
+            <strong>Lyrics</strong> 추미정 <br>
+            <strong>Composed by</strong> 추미정 <br>
+            <strong>Arranged by</strong> 김태훈 
+          </p>
+
+          <div class="button-row" style="margin-top: 20px;">
+            <a class="btn btn-primary" href="https://www.youtube.com/watch?v=pt7yNHjZKf4&list=OLAK5uy_mrLz24WeYrfrR9x6UGTUJM6e0j2UT6PDM/" target="_blank">감상하기</a>
+            <a class="btn btn-secondary" href="lyrics-melody.html">노랫말</a>
+            <a class="btn btn-secondary" href="score-melody.pdf" target="_blank">악보</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="story-box">
+        <h3 class="sub-title">곡 소개</h3>
+        <p class="song-text">
+          〈너의 멜로디〉는 한 사람과 함께했던 시간이
+          마음속에 오래 남아 하나의 선율처럼 되새겨지는 순간을 담은 발라드입니다.
+          지나간 기억은 더 이상 붙잡을 수 없는 것이 되었지만,
+          문득 들려오는 멜로디와 익숙한 감정의 결 속에서
+          그 사람의 흔적은 다시 조용히 살아나곤 합니다.
+          이 곡은 그런 잔잔한 그리움과 오래 남는 정서를
+          담담하면서도 부드럽게 풀어내는 곡으로 구성했습니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="link-box">
+        <h3 class="sub-title">함께 보기</h3>
+        <div class="button-row">
+          <a class="btn btn-primary" href="music.html">전체 음반으로 돌아가기</a>
+          <a class="btn btn-secondary" href="lyrics-melody.html">노랫말 페이지</a>
+          <a class="btn btn-secondary" href="score-melody.pdf" target="_blank">악보 PDF</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 추미정의 오선지와 원고지. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
